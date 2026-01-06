@@ -1,0 +1,9 @@
+nyc_taxi_postgres_data
+
+.DS_Store
+__pycache__/
+*.pyc
+.env
+.vscode/
+*.csv
+*.gz
