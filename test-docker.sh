@@ -37,26 +37,48 @@ URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yell
   --table_name=yellow_taxi_trips \
   --url ${URL}
 
+
+
+# 1. Connecting to standalone Postgres (started via docker run on pg-network)
 URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz"
 
-docker run taxi_ingest:v001 \
-  --user=root \
-  --password=admin \
-  --host=pg-database \
-  --port=5432 \
-  --db=nyc_taxi \
-  --table_name=yellow_taxi_trips_1 \
-  --url=${URL}
-
-  ##corected
-
-URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz"
-
-docker run -it --network=pg-network taxi_ingest:v001 \
+docker run -it \
+  --network=pg-network \
+  taxi_ingest:v001 \
   --user=root \
   --password=admin \
   --host=pg-database \
   --port=5432 \
   --db=nyc_taxi \
   --table_name=yellow_taxi_trips \
+  --url=${URL}
+
+
+# 2. Connecting to Docker Compose Postgres (running on docker_sql_default network)
+URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz"
+
+docker run -it \
+  --network=docker_sql_default \
+  taxi_ingest:v001 \
+  --user=root \
+  --password=admin \
+  --host=pgdatabase \
+  --port=5432 \
+  --db=nyc_taxi \
+  --table_name=yellow_taxi_trips \
+  --url=${URL}
+
+# 3. Taxi Zones Ingestion
+
+URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/misc/taxi_zone_lookup.csv"
+
+docker run -it \
+  --network=docker_sql_default \
+  taxi_ingest:v001 \
+  --user=root \
+  --password=admin \
+  --host=pgdatabase \
+  --port=5432 \
+  --db=nyc_taxi \
+  --table_name=zones \
   --url=${URL}
