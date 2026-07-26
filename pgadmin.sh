@@ -6,7 +6,7 @@ docker run -it \
 
 docker network create pg-network
 
-networks
+
 
 fe4ee8d09fb5f4f26d8487196a91d897f353d8ad21c1b13ea16d96e36de6209b
 
