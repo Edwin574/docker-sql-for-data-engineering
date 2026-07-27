@@ -1,0 +1,7 @@
+id: gcp_setup
+namespace: zoomcamp
+
+tasks:
+  - id: gcp_setup
+    type: io.kestra.core.tasks.flows.Flow
+    flowId: gcp_setup
