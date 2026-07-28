@@ -7,3 +7,4 @@ __pycache__/
 .vscode/
 *.csv
 *.gz
+gcp_creds.json

@@ -1,7 +1,45 @@
-id: gcp_setup
+id: gcp_setting_up
 namespace: zoomcamp
 
 tasks:
-  - id: gcp_setup
-    type: io.kestra.core.tasks.flows.Flow
-    flowId: gcp_setup
+  - id: gcp_project_id
+    type: io.kestra.plugin.core.kv.Set
+    key: GCP_PROJECT_ID
+    kvType: STRING
+    value: terrsaform-stuff
+
+  - id: gcp_location
+    type: io.kestra.plugin.core.kv.Set
+    key: GCP_LOCATION
+    kvType: STRING
+    value: africa-south1
+
+  - id: gcp_bucket_name
+    type: io.kestra.plugin.core.kv.Set
+    key: GCP_BUCKET_NAME
+    kvType: STRING
+    value: terrsaform-stuff-terraform-bucket
+
+  - id: gcp_dataset
+    type: io.kestra.plugin.core.kv.Set
+    key: GCP_DATASET
+    kvType: STRING
+    value: taxi_dataset
+
+  - id: service_acc
+    type: io.kestra.plugin.core.kv.Set
+    key: GCP_CREDS
+    kvType: JSON
+    value: |
+      {
+      "type": "service_account",
+      "project_id": "",
+      "private_key_id": "",
+      "private_key": """
+      "client_id": "",
+      "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+      "token_uri": "https://oauth2.googleapis.com/token",
+      "auth_provider_x509_cert_url": "",
+      "client_x509_cert_url": "",
+      "universe_domain": "googleapis.com"
+      }
