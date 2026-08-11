@@ -68,7 +68,7 @@ python3 ingest_data.py
 4. Open the admin UI (if provided) or connect with `psql` to inspect tables and queries.
 
 Where to find Module 2
-Module 2 (workflow orchestration and more advanced pipeline examples) is maintained on a separate branch. See: https://github.com/Edwin574/docker-sql-for-data-engineering/tree/wokflow_orchestration
+Module 2 (workflow orchestration and more advanced pipeline examples) is maintained on a separate branch. See: [Module 2 branch](https://github.com/Edwin574/docker-sql-for-data-engineering/tree/wokflow_orchestration)
 
 Notes and next steps
 - This Module 1 README focuses on the container+SQL fundamentals. More advanced orchestration, scheduling, or cloud integration work is in the Module 2 branch linked above.
