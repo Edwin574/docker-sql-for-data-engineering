@@ -1,4 +1,4 @@
-Module 1 – Containerization with Docker & SQL (Data Engineering Learning Project)
+Module 1 – Containerization with Docker & SQL 
 
 Overview
 This repository contains a focused, hands-on Module 1 for learning practical data engineering concepts using Docker and a local PostgreSQL instance. The exercises and code in this module show how to: build and run containerized services, persist and manage database data, ingest CSV datasets into Postgres, and run simple data pipelines from both host and container environments.
